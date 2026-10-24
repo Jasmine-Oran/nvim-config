@@ -9,3 +9,8 @@ vim.opt.smartindent = true
 vim.opt.mousemoveevent = true
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "both"
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevelstart = 99
+vim.opt.foldcolumn = "auto:1"

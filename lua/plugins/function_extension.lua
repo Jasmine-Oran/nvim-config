@@ -50,7 +50,7 @@ return {
 			icons = { mappings = false },
 			spec = {
 				{ "<leader>f", group = "Find" },
-				{ "<leader>h", group = "Hunk" },
+				{ "<leader>h", group = "Git hunk" },
 				{ "<leader>l", group = "LSP" },
 			},
 		},

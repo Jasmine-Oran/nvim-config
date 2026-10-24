@@ -1,9 +1,5 @@
 return {
 	{
-		"sphamba/smear-cursor.nvim",
-		opts = {},
-	},
-	{
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,

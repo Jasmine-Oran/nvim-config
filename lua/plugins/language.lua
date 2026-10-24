@@ -35,4 +35,18 @@ return {
 			format_on_save = { timeout_ms = 1000 },
 		},
 	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
+		build = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter").install({
+				"python",
+				"lua",
+				"json",
+				"jsonc",
+				"toml",
+			})
+		end,
+	},
 }
