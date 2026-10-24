@@ -47,6 +47,7 @@ return {
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		opts = {
+			icons = { mappings = false },
 			spec = {
 				{ "<leader>f", group = "Find" },
 				{ "<leader>h", group = "Hunk" },
@@ -117,6 +118,20 @@ return {
 			current_line_blame = true,
 		},
 		keys = {
+			{
+				"]h",
+				function()
+					require("gitsigns").next_hunk()
+				end,
+				desc = "Next hunk",
+			},
+			{
+				"[h",
+				function()
+					require("gitsigns").prev_hunk()
+				end,
+				desc = "Previous hunk",
+			},
 			{
 				"<leader>hh",
 				function()
