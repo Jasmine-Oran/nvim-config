@@ -59,6 +59,15 @@ return {
 		end,
 	},
 	{
+		"Fau818/fade.nvim",
+		event = { "LspAttach", "InsertEnter" },
+		opts = {},
+
+		dependencies = {
+			{ "Saghen/blink.cmp", optional = true },
+		},
+	},
+	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		opts = {
@@ -240,8 +249,22 @@ return {
 		"saghen/blink.cmp",
 		version = "1.*",
 		opts = {
-			keymap = { preset = "super-tab" },
+			keymap = { preset = "default" },
+			cmdline = {
+				enabled = true,
+				completion = {
+					menu = {
+						auto_show = function()
+							return vim.fn.getcmdtype() == ":"
+						end,
+					},
+				},
+			},
 			signature = { enabled = true },
+			completion = {
+				accept = { auto_brackets = { enabled = true } },
+				documentation = { auto_show = true, auto_show_delay_ms = 500 },
+			},
 		},
 	},
 }
