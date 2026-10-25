@@ -22,17 +22,32 @@ return {
 			keymaps = {
 				["<CR>"] = "actions.select",
 				["<BS>"] = { "actions.parent", mode = "n" },
+				["`"] = { "actions.cd", mode = "n" },
+			},
+			view_options = {
+				show_hidden = true,
+			},
+			float = {
+				max_width = 0.7,
+				max_height = 0.6,
+				border = "rounded",
 			},
 		},
 		keys = {
 			{
 				"<leader>o",
 				function()
-					require("oil").open()
+					require("oil").open_float()
 				end,
 				desc = "Oil",
 			},
 		},
+	},
+	{
+		"malewicz1337/oil-git.nvim",
+		ft = "oil",
+		dependencies = { "stevearc/oil.nvim" },
+		opts = {},
 	},
 	{
 		"ywpkwon/yank-path.nvim",
@@ -110,6 +125,17 @@ return {
 				desc = "Toggle flash search",
 			},
 		},
+	},
+	{
+		"chrisgrieser/nvim-origami",
+		event = "VeryLazy",
+		opts = {
+			foldKeymaps = { setup = false },
+		},
+		init = function()
+			vim.opt.foldlevel = 99
+			vim.opt.foldlevelstart = 99
+		end,
 	},
 	{
 		"lewis6991/gitsigns.nvim",

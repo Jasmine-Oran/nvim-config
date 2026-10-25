@@ -17,20 +17,25 @@ return {
 			})
 
 			require("mason-lspconfig").setup({
-				ensure_installed = { "pyright", "lua_ls", "jsonls", "taplo", "ruff", "stylua" },
+				ensure_installed = { "pyright", "lua_ls", "jsonls", "taplo" },
 				automatic_enable = { "pyright", "lua_ls", "jsonls", "taplo" },
 			})
 		end,
 	},
 	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		dependencies = { "mason-org/mason.nvim" },
+		opts = { ensure_installed = { "black", "stylua" } },
+	},
+	{
 		"stevearc/conform.nvim",
 		opts = {
 			formatters_by_ft = {
-				python = { "ruff_format" },
+				python = { "black" },
 				lua = { "stylua" },
 				json = { lsp_format = "fallback" },
 				jsonc = { lsp_format = "fallback" },
-				toml = { "taplo" },
+				toml = { lsp_format = "fallback" },
 			},
 			format_on_save = { timeout_ms = 1000 },
 		},
@@ -44,7 +49,6 @@ return {
 				"python",
 				"lua",
 				"json",
-				"jsonc",
 				"toml",
 			})
 		end,

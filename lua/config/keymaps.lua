@@ -1,3 +1,7 @@
+-- Leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode" })
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
