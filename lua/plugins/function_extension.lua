@@ -249,9 +249,10 @@ return {
 		"saghen/blink.cmp",
 		version = "1.*",
 		opts = {
-			keymap = { preset = "default" },
+			keymap = { preset = "super-tab" },
 			cmdline = {
 				enabled = true,
+				keymap = { preset = "inherit" },
 				completion = {
 					menu = {
 						auto_show = function()
