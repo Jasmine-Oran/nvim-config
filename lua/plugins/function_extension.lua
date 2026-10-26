@@ -75,7 +75,7 @@ return {
 			spec = {
 				{ "<leader>f", group = "Find" },
 				{ "<leader>h", group = "Git hunk" },
-				{ "<leader>l", group = "LSP" },
+				{ "gr", group = "LSP" },
 			},
 		},
 		keys = {
