@@ -30,7 +30,7 @@ return {
 			float = {
 				max_width = 0.7,
 				max_height = 0.6,
-				border = "rounded",
+				border = "single",
 			},
 		},
 		keys = {
@@ -242,6 +242,20 @@ return {
 					Snacks.picker.buffers()
 				end,
 				desc = "Find buffers",
+			},
+			{
+				"<leader>fd",
+				function()
+					Snacks.picker.diagnostics_buffer()
+				end,
+				desc = "Find diagnotics",
+			},
+			{
+				"<leader>fD",
+				function()
+					Snacks.picker.diagnostics()
+				end,
+				desc = "Find all diagnotics",
 			},
 		},
 	},
