@@ -181,13 +181,6 @@ return {
 				end,
 				desc = "Stage/unstage hunk",
 			},
-			{
-				"<leader>hd",
-				function()
-					require("gitsigns").diffthis()
-				end,
-				desc = "Diff current file",
-			},
 		},
 	},
 	{
@@ -221,6 +214,13 @@ return {
 					Snacks.picker.files()
 				end,
 				desc = "Find file",
+			},
+			{
+				"<leader>fr",
+				function()
+					Snacks.picker.recent()
+				end,
+				desc = "Find recent file",
 			},
 			{
 				"<leader>fc",

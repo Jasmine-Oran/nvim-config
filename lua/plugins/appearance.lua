@@ -48,7 +48,25 @@ return {
 					reveal = { "close" },
 				},
 				indicator = { style = "underline" },
-				diagnostics = "nvim_lsp",
+				groups = {
+					items = {
+						{
+							name = "Buffers",
+							highlight = { underline = false, sp = "#51A0CF" },
+							matcher = function(buf)
+								return buf.buftype == ""
+							end,
+						},
+						{
+							name = "Terminal",
+							highlight = { underline = false, sp = "#A6E3A1" },
+							matcher = function(buf)
+								return buf.buftype == "terminal"
+							end,
+						},
+					},
+				},
+				diagnostics = "nvim_lsp", -- LSP indicators
 				offsets = {
 					{
 						filetype = "snacks_layout_box",
