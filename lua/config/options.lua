@@ -23,7 +23,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.scrolloff = 10
 
+-- LSP diagnostics
 vim.diagnostic.config({
 	virtual_lines = { current_line = true },
-	virtual_text = false,
 })

@@ -52,7 +52,7 @@ return {
 					items = {
 						{
 							name = "Buffers",
-							highlight = { underline = false, sp = "#89B4FA" },
+							highlight = { underline = false, sp = "#6AC8F1" },
 							matcher = function(buf)
 								return buf.buftype == ""
 							end,
