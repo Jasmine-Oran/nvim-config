@@ -17,8 +17,8 @@ return {
 			})
 
 			require("mason-lspconfig").setup({
-				ensure_installed = { "pyright", "lua_ls", "jsonls", "taplo" },
-				automatic_enable = { "pyright", "lua_ls", "jsonls", "taplo" },
+				ensure_installed = { "pyright", "lua_ls", "jsonls", "taplo", "yamlls" },
+				automatic_enable = { "pyright", "lua_ls", "jsonls", "taplo", "yamlls" },
 			})
 		end,
 	},
@@ -36,6 +36,7 @@ return {
 				json = { lsp_format = "fallback" },
 				jsonc = { lsp_format = "fallback" },
 				toml = { lsp_format = "fallback" },
+				yaml = { lsp_format = "fallback" },
 			},
 			format_on_save = { timeout_ms = 1000 },
 		},
