@@ -1,4 +1,5 @@
 return {
+	-- LSP
 	{
 		"mason-org/mason-lspconfig.nvim",
 		dependencies = {
@@ -17,16 +18,20 @@ return {
 			})
 
 			require("mason-lspconfig").setup({
-				ensure_installed = { "pyright", "lua_ls", "jsonls", "taplo", "yamlls" },
-				automatic_enable = { "pyright", "lua_ls", "jsonls", "taplo", "yamlls" },
+				ensure_installed = { "basedpyright", "lua_ls", "jsonls", "taplo", "yamlls" },
+				automatic_enable = { "basedpyright", "lua_ls", "jsonls", "taplo", "yamlls" },
 			})
 		end,
 	},
+
+	-- language tools
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		dependencies = { "mason-org/mason.nvim" },
 		opts = { ensure_installed = { "black", "stylua" } },
 	},
+
+	-- formatters
 	{
 		"stevearc/conform.nvim",
 		opts = {
@@ -41,6 +46,8 @@ return {
 			format_on_save = { timeout_ms = 1000 },
 		},
 	},
+
+	-- language parsers
 	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
