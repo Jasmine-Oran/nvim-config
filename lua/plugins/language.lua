@@ -47,17 +47,26 @@ return {
 		},
 	},
 
-	-- language parsers
+	-- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		build = ":TSUpdate",
 		config = function()
+			-- install parsers
 			require("nvim-treesitter").install({
 				"python",
 				"lua",
 				"json",
 				"toml",
+				"yaml",
+			})
+			-- enable treesitter highlight
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = { "python", "lua", "json", "toml", "yaml" },
+				callback = function()
+					vim.treesitter.start()
+				end,
 			})
 		end,
 	},
