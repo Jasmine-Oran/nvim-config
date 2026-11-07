@@ -16,10 +16,20 @@ return {
 					},
 				},
 			})
+			vim.lsp.config("pyright", {
+				before_init = function(_, config)
+					local python = config.root_dir .. "/.venv/bin/python"
+					if vim.fn.executable(python) == 1 then
+						config.settings = vim.tbl_deep_extend("force", config.settings or {}, {
+							python = { pythonPath = python },
+						})
+					end
+				end,
+			})
 
 			require("mason-lspconfig").setup({
-				ensure_installed = { "basedpyright", "lua_ls", "jsonls", "taplo", "yamlls" },
-				automatic_enable = { "basedpyright", "lua_ls", "jsonls", "taplo", "yamlls" },
+				ensure_installed = { "pyright", "lua_ls", "jsonls", "taplo", "yamlls" },
+				automatic_enable = { "pyright", "lua_ls", "jsonls", "taplo", "yamlls" },
 			})
 		end,
 	},
