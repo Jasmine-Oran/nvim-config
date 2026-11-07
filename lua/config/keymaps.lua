@@ -4,6 +4,7 @@ vim.g.maplocalleader = " "
 
 -- Mode switch
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode" })
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "No hightlight search" })
 
 -- Lsp
 vim.api.nvim_create_autocmd("LspAttach", {

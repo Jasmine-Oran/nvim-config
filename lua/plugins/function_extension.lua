@@ -13,52 +13,6 @@ return {
 		end,
 	},
 	{
-		"stevearc/oil.nvim",
-		lazy = false,
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			default_file_explorer = true,
-			delete_to_trash = true,
-			keymaps = {
-				["<CR>"] = "actions.select",
-				["<BS>"] = { "actions.parent", mode = "n" },
-				["`"] = { "actions.cd", mode = "n" },
-			},
-			view_options = {
-				show_hidden = true,
-			},
-			float = {
-				max_width = 0.7,
-				max_height = 0.6,
-				border = "single",
-			},
-		},
-		keys = {
-			{
-				"<leader>o",
-				function()
-					require("oil").open_float()
-				end,
-				desc = "Oil",
-			},
-		},
-	},
-	{
-		"malewicz1337/oil-git.nvim",
-		ft = "oil",
-		dependencies = { "stevearc/oil.nvim" },
-		opts = {},
-	},
-	{
-		"ywpkwon/yank-path.nvim",
-		config = function()
-			require("yank-path").setup({
-				prompt = "Yank which path?",
-				use_oil = true,
-			})
-		end,
-	},
-	{
 		"Fau818/fade.nvim",
 		event = { "LspAttach", "InsertEnter" },
 		opts = {},
@@ -188,6 +142,7 @@ return {
 		priority = 1000,
 		lazy = false,
 		opts = {
+			explorer = { enabled = true, replace_netrw = true, trash = true },
 			animate = { enabled = true },
 			bigfile = { enabled = true },
 			image = { enabled = true },
@@ -207,6 +162,13 @@ return {
 			words = { enabled = true },
 		},
 		keys = {
+			{
+				"<leader>e",
+				function()
+					Snacks.explorer()
+				end,
+				desc = "Explorer",
+			},
 			{
 				"<leader>ff",
 				function()

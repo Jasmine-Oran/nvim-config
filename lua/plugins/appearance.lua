@@ -67,11 +67,6 @@ return {
 					},
 				},
 				diagnostics = "nvim_lsp", -- LSP indicators
-				offsets = {
-					{
-						filetype = "snacks_layout_box",
-					},
-				},
 			},
 		},
 	},
