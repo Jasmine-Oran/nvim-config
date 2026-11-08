@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Mode switch
+-- misc
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "No hightlight search" })
 

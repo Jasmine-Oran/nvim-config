@@ -21,7 +21,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
 
 -- LSP diagnostics
 vim.diagnostic.config({

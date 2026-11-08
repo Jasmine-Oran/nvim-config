@@ -67,6 +67,10 @@ return {
 					},
 				},
 				diagnostics = "nvim_lsp", -- LSP indicators
+				diagnostics_indicator = function(count, level)
+					local icon = level == "error" and " " or " "
+					return " " .. icon .. count
+				end,
 			},
 		},
 	},
