@@ -24,6 +24,22 @@ vim.opt.splitright = true
 vim.opt.scrolloff = 15
 
 -- LSP diagnostics
+
+-- vim.diagnostic.config({
+-- 	virtual_lines = { current_line = true },
+-- })
+
 vim.diagnostic.config({
-	virtual_lines = { current_line = true },
+	virtual_lines = false,
+})
+
+vim.opt.updatetime = 500 -- 光标停留700毫秒后触发CursorHold
+vim.api.nvim_create_autocmd("CursorHold", {
+	callback = function()
+		vim.diagnostic.open_float({
+			scope = "cursor",
+			focusable = false,
+			border = "single",
+		})
+	end,
 })

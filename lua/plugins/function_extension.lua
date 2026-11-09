@@ -218,6 +218,13 @@ return {
 				end,
 				desc = "Find all diagnotics",
 			},
+			{
+				"<leader>:",
+				function()
+					Snacks.picker.command_history()
+				end,
+				desc = "Command history",
+			},
 		},
 	},
 	{
