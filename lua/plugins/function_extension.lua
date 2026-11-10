@@ -135,6 +135,13 @@ return {
 				end,
 				desc = "Stage/unstage hunk",
 			},
+			{
+				"<leader>hr",
+				function()
+					require("gitsigns").reset_hunk()
+				end,
+				desc = "Reset hunk",
+			},
 		},
 	},
 	{
