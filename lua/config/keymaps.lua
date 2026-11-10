@@ -14,7 +14,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- Terminal
-vim.keymap.set("n", "<leader>t", function()
-	vim.cmd("terminal")
-end, { desc = "Open terminal" })
 vim.keymap.set("t", "<C-\\>", "<C-\\><C-n>", { desc = "Exit terminal mode" })

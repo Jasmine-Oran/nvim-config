@@ -22,6 +22,19 @@ return {
 		},
 	},
 	{
+		{
+			"akinsho/toggleterm.nvim",
+			version = "*",
+			opts = {
+				open_mapping = [[<leader>t]],
+				insert_mappings = false,
+				on_open = function(term)
+					vim.bo[term.bufnr].buflisted = true
+				end,
+			},
+		},
+	},
+	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		opts = {
