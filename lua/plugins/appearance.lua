@@ -59,41 +59,10 @@ return {
 					reveal = { "close" },
 				},
 				indicator = { style = "underline" },
-				groups = {
-					items = {
-						{
-							name = "Buffers",
-							highlight = { underline = false, sp = "#6AC8F1" },
-							matcher = function(buf)
-								return buf.buftype == ""
-							end,
-						},
-						{
-							name = "Terminal",
-							highlight = { underline = false, sp = "#A6E3A1" },
-							matcher = function(buf)
-								return buf.buftype == "terminal"
-							end,
-						},
-					},
-				},
 				diagnostics = "nvim_lsp", -- LSP indicators
 				diagnostics_indicator = function(count, level)
 					local icon = level == "error" and " " or " "
 					return " " .. icon .. count
-				end,
-
-				-- 适配Snacks.terminal
-				left_mouse_command = function(bufnr)
-					vim.schedule(function()
-						for _, term in ipairs(Snacks.terminal.list()) do
-							if term.buf == bufnr then
-								term:show():focus()
-								return
-							end
-						end
-						vim.api.nvim_set_current_buf(bufnr)
-					end)
 				end,
 			},
 		},

@@ -167,12 +167,7 @@ return {
 			scope = { enabled = true },
 			statuscolumn = { enabled = true },
 			words = { enabled = true },
-			terminal = {
-				enabled = true,
-				win = {
-					bo = { buflisted = true },
-				},
-			},
+			terminal = { enabled = true },
 		},
 		keys = {
 			{
@@ -181,6 +176,13 @@ return {
 					Snacks.explorer()
 				end,
 				desc = "Explorer",
+			},
+			{
+				"<leader>o",
+				function()
+					Snacks.picker.lsp_symbols()
+				end,
+				desc = "Outline",
 			},
 			{
 				"<leader>ff",
@@ -239,7 +241,7 @@ return {
 				desc = "Command history",
 			},
 			{
-				"<leader>t",
+				"<D-j>",
 				function()
 					Snacks.terminal()
 				end,
