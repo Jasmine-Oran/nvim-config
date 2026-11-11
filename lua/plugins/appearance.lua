@@ -82,6 +82,19 @@ return {
 					local icon = level == "error" and " " or " "
 					return " " .. icon .. count
 				end,
+
+				-- 适配Snacks.terminal
+				left_mouse_command = function(bufnr)
+					vim.schedule(function()
+						for _, term in ipairs(Snacks.terminal.list()) do
+							if term.buf == bufnr then
+								term:show():focus()
+								return
+							end
+						end
+						vim.api.nvim_set_current_buf(bufnr)
+					end)
+				end,
 			},
 		},
 	},

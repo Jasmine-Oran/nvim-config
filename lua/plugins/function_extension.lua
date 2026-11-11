@@ -22,19 +22,6 @@ return {
 		},
 	},
 	{
-		{
-			"akinsho/toggleterm.nvim",
-			version = "*",
-			opts = {
-				open_mapping = [[<leader>t]],
-				insert_mappings = false,
-				on_open = function(term)
-					vim.bo[term.bufnr].buflisted = true
-				end,
-			},
-		},
-	},
-	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		opts = {
@@ -180,6 +167,12 @@ return {
 			scope = { enabled = true },
 			statuscolumn = { enabled = true },
 			words = { enabled = true },
+			terminal = {
+				enabled = true,
+				win = {
+					bo = { buflisted = true },
+				},
+			},
 		},
 		keys = {
 			{
@@ -244,6 +237,13 @@ return {
 					Snacks.picker.command_history()
 				end,
 				desc = "Command history",
+			},
+			{
+				"<leader>t",
+				function()
+					Snacks.terminal()
+				end,
+				desc = "Toggle terminal",
 			},
 		},
 	},
